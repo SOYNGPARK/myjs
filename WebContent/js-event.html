@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 스크립트 내부에서 DOM객체 또는 바디 내부 엘리먼트를 참조하는 코드는 불가능하다.
+	
+	window.onload =init;
+	function init() { // 그래서 init안에 넣는다
+		alert('init');
+		var myb = document.getElementById("mybtn");
+		myb.onclick = clickBtn;
+	}
+	
+	function clickBtn() {
+		console.log('click button!');
+	}
+	
+	</script>
+
+</head>
+<body>
+	<button id="mybtn">mybtn</button>
+	<input type="button" value="mybtn2" id="mybtn2">
+	DOM객체를 메모리에 형성하고 나서 아래스크립트를 실행하므로 문제없다.
+
+</body>
+</html>

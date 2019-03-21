@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+div#lotto{
+width:50px;
+height:50px;
+border:1px solid green;
+background-color:#CF0;
+}
+</style>
+<script type="text/javascript">
+	window.onload =init;
+	function init() { 
+		alert('init');
+		var myb = document.getElementById("lotto");
+		myb.onclick = clickBtn;
+	}
+	
+	function clickBtn() {
+		console.log('click button!');
+		var arr = assign();
+		alertNums(arr);
+	}
+	
+	function assign() {
+		var data;
+		var arr = [];
+		for(var i=0; i<6; i++) {
+			data = parseInt(Math.random()*45)+1;
+			arr.push(data);
+		}
+		return arr;
+	}
+
+	function alertNums(arr) {
+		alert(arr.toString());
+	}
+	</script>
+
+</head>
+<body>
+<div id="lotto">lotto</div>
+</body>
+</html>

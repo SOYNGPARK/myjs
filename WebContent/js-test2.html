@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var list = [];
+	list[0] = 500;
+	list[100] = 'haha';
+	list[1000] = function() {
+		alert('hahaha');
+	};
+	
+	var emp={}; //JSON = Javascript Object Notation
+	emp ={id:1234, name:'soyoung', salary:5000}; //key&value쌍
+	console.log(emp.id);
+	console.log(emp.name);
+	
+	for(var e in emp) {
+		console.log(emp[e]);
+	}
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

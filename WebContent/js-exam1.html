@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function assign() {
+	var data;
+	var arr = [];
+	for(var i=0; i<6; i++) {
+		data = parseInt(Math.random()*45)+1;
+		arr.push(data);
+	}
+	return arr;
+}
+
+function print(arr) {
+	console.log(arr.toString());
+}
+
+var arr = assign();
+
+print(arr);
+
+
+
+
+</script>
+
+</body>
+</html>
