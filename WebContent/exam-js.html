@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	window.onload = function() {
+		var user_name = document.getElementById('name');
+		user_name.focus();
+		
+		var submit = document.getElementById('btn_submit');
+		submit.onclick =clickBtn;
+		
+		function clickBtn(event) {
+			if(!user_name.value) {
+				alert("이름을 입력해주세요!");
+				user_name.focus();
+				event.preventDefault();
+			} else {
+				alertHobby();
+			}
+		}
+		
+		function alertHobby() {
+			var hobby_sports = document.getElementById('chk1');
+			if(hobby_sports.checked) {
+				alert("취미가 운동이군요!")
+			}
+		}
+	}	
+
+</script>
+
+<style type="text/css">
+div {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+table {
+	border: red 1;
+	text-align: center;
+	width: 90%;
+	font-weight: bold;
+	background-color: cyan;
+}
+
+tr:nth-child(even) {
+	background: lime;
+}
+
+tr:hover {
+	background: grey;
+}
+
+select {
+	height: 25px
+}
+</style>
+<body>
+	<div>웹 폼 사례</div>
+	<form action="submit">
+		<table class="main_table" border=1>
+			<tr>
+				<td>사용자이름</td>
+				<td><input id="name" type="text"></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>검색단어</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>취미</td>
+				<td><input type="checkbox" name="chk" id="chk1" value="1">운동</input>
+					<input type="checkbox" name="chk" id="chk2" value="2">악기</input> <input
+					type="checkbox" name="chk" id="chk3" value="3">여행</input></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type="radio" name="btn_radio" id="btn_radio1"
+					value="1">남자</input> <input type="radio" name="btn_radio"
+					id="btn_radio2" value="2">여자</input></td>
+			</tr>
+			<tr>
+				<td>점심메뉴</td>
+				<td><select id="combo">
+						<option value="1">짜장면</option>
+						<option value="2">짬뽕</option>
+						<option value="3">볶음밥</option>
+				</select></td>
+			</tr>
+		</table>
+	</form>
+	<input type="submit" name="btn_submit" id="btn_submit" value="submit"></input>
+</body>
+</html>

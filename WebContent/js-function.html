@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var myf = function(myf2) {
+		alert('myf');
+	}
+	
+	//myf("hi", 1, 2); //문제없다.. 문제? 매개변수가 함수 정의에 있지 않아도, 매개변수를 넘기던지 말던지 상관없이 실행 잘만된다.
+	myf(); // 또한 문제 없다.. 문제? 매개변수가 함수 정의에 있더라도, 매개변수를 안넘겨도 상관없이 실행 잘만된다.
+	
+			
+	// DOM 객체 : winodw 하위 객체 중 하나 navigator
+	window.onload = function() {
+		var result = '';
+		for(var e in navigator) {
+			result += 'key='+e+', value='+navigator[e]+'\n';
+		}
+		alert(result);
+	}		
+			
+	
+			
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

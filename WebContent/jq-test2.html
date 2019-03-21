@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		font: bold 20px verdana, sans-serif;
+		width: 70px;
+		text-align: center;
+		border : 1px solid black;
+		border-radius : 7px;  --10px 30px 50px;
+		background-color: yellow;
+		cursor:pointer;
+	}
+</style>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	//window.onload = init; 
+	$(document).ready(init);
+	function init(){
+		//var lotto = document.getElementById("lotto");
+		//lotto.onclick=clickBtn;
+		$('#lotto').on("click", clickBtn);
+	}
+	
+	function clickBtn(){
+		var num = [];
+		function random (){
+			for(var i=0; i<6; i++){
+				num[i] = parseInt((Math.random()*45)+1);
+			}
+			
+			return num;
+		};
+		var ran = random();
+		alert(ran.toString());
+	}
+</script>
+</head>
+<body>
+<div id="lotto">lotto</div>
+</body>
+</html>

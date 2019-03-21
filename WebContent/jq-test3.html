@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.webTable{
+		border : 1px solid red;
+		background-color: cyan;
+		width: 90%;
+	}
+	
+	.webTable td{
+		font: bold 12px verdana, sans-serif;
+		border : 1px solid red;
+		text-align: center;
+	}
+	
+	.webTable tr{
+		background-color: cyan;
+	}
+	
+	.webTable tr:nth-child(even){
+		background-color: lime;
+	}
+	
+	.webTable tr:nth-child(3){
+		background-color: yellow;
+	}
+	
+	.webTable tr:hover{
+		background-color: gray;
+	}
+</style>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+	//window.onload = function (){
+	$('document').ready(function() {
+		//document.getElementById("name").focus();
+		$('#name').focus();
+		//var btn = document.getElementById("btn");
+		//btn.onclick=clickBtn;
+		$('#btn').on("click", clickBtn);
+	});
+	
+	function clickBtn(){
+		var name = document.getElementById("name");
+		//if(name.value == null || name.value == ""){
+		if(!$('#name').val()) {
+			alert("사용자이름을 입력하세요.");
+			$('#name').focus();
+			e.preventDefault();
+		}
+		var hobby = document.getElementsByName("hobby");
+		//if(hobby[0].checked){
+		if($('input[value="exercise"]:checkbox').is(":checked") {
+			alert("운동이 취미시군요!");
+		}
+	}
+</script>
+</head>
+<body>
+
+<h1>웹 폼 사례</h1>
+<table class="webTable">
+	<tr>
+		<td>사용자이름</td>
+		<td><input type="text" placeholder="이름을 입력하셔요" id="name"/></td>
+	</tr>
+	<tr>
+		<td>이메일</td>
+		<td><input type="text" id="email"/></td>
+	</tr>
+	<tr>
+		<td>검색단어</td>
+		<td><input type="text" id="searchWord"/></td>
+	</tr>
+	<tr>
+		<td>취미</td>
+		<td><input type="checkbox" name="hobby" value="exercise" /> 운동
+			<input type="checkbox" name="hobby" value="music" /> 악기
+			<input type="checkbox" name="hobby" value="travel" /> 여행
+		</td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td><input type="radio" name="gender" value="male" /> 남자
+			<input type="radio" name="gender" value="female" /> 여자
+		</td>
+	</tr>
+	<tr>
+		<td>점심메뉴</td>
+		<td><select name="menu">
+			  <option value="1" selected="selected">짜장면</option>
+			  <option value="2">비빔밥</option>
+			  <option value="3">초밥</option>
+			</select>
+		</td>
+	</tr>
+</table>
+<br>
+<input type="button" value="submit" id="btn"/>
+</body>
+</html>
